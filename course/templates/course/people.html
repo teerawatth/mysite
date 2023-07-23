@@ -1,0 +1,65 @@
+{% extends 'course/coursedetail.html' %}
+
+{% block bg %}
+<div class="col-start-2 col-span-4 relative">
+    <div class="container mx-auto px-4 py-8">
+        <table class="table-auto w-full">
+            <thead>
+                <tr>
+                    <th
+                        class="px-4 py-2 text-left font-normal border-b-2 border-green-500 text-3xl text-green-700 font-mono">
+                        ครู</th>
+                    <th class="px-4 py-2 text-left font-semibold border-b-2 border-green-500"></th>
+                    <th class="px-4 py-2 text-left font-semibold border-b-2 border-green-500"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lc in lcr%}
+                <tr>
+                    <td class="px-4 py-2 border-b">
+                        <div class="px-6 py-4">
+                            <img src="https://biographymask.com/wp-content/uploads/2021/03/Johnny-Sins.jpg" alt=""
+                                class="h-[35px] float-left rounded-full -ml-5">
+                            <span class="text-sm font-mono font-medium ml-5">{{ lc.first_name }}
+                                {{ lc.last_name }}</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-2 border-b"></td>
+                    <td class="px-4 py-2 border-b"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="table-auto w-full mt-10">
+            <thead>
+                <tr>
+                    <th
+                        class="px-4 py-2 text-left font-normal border-b-2 border-green-500 text-3xl text-green-700 font-mono">
+                        เพื่อนร่วมชั้น</th>
+                    <th class="px-4 py-2 text-left font-semibold border-b-2 border-green-500"></th>
+                    <th
+                        class="px-4 py-2 text-right font-semibold border-b-2 border-green-500 text-sm text-green-700 font-mono">
+                        นักเรียน {{ std.count }} คน</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sd in std %}
+                <tr>
+                    <td class="px-4 py-2 border-b">
+                        <div class="px-6 py-4">
+                            <img src="https://www.shutterstock.com/image-photo/japanese-student-girl-woman-tatami-260nw-321475607.jpg"
+                                alt="" class="h-[35px] float-left rounded-full -ml-5">
+                            <span class="text-sm font-mono font-medium ml-5 text-gray-700">{{ sd.first_name }}
+                                {{ sd.last_name }}</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-2 border-b"></td>
+                    <td class="px-4 py-2 border-b"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

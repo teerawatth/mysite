@@ -1,0 +1,40 @@
+{% extends 'course/index.html' %}
+
+{% block nav %}
+{% include 'course/topbarcourse.html' %}
+{% endblock %}
+{% block col %}
+
+{% block p %}
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-6 gap-4">
+        {% block bg %}
+        <div class="col-start-2 col-span-4 text-center font-serif text-4xl">Lecturer</div>
+        <div class="col-start-2 col-span-4 text-center font-serif">
+            <div class="grid grid-cols-3 gap-4 mx-auto mt-10">
+                {% for lcr in lecturer %}
+                <a href="{% url 'lprof' lcr.pk %}">
+                    <div
+                        class="max-w rounded overflow-hidden border bg-green-100 border-gray-300 mt-0 hover:border-rose-600">
+                        <div class="px-6 py-4">
+                            <span class="text-lg text-bold">
+                                <div class="px-6 py-4">
+                                    <img src="https://www.suddenviral.com/wp-content/uploads/2022/09/Johnny-Sins-4-1-1024x576.jpg"
+                                        alt=""
+                                        class="h-[75px] w-[75px] object-cover -mt-6 float-left -ml-10 rounded-lg blur-sm hover:blur-none">
+                                    <span class="text-lg text-bold">{{ lcr.first_name }}</span>
+                                    <span class="text-lg text-bold">{{ lcr.last_name }}</span><br>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+{% endblock %}

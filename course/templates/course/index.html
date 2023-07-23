@@ -1,0 +1,57 @@
+{% extends 'course/base.html' %}
+
+{% block nav %}
+{% include 'course/topbar.html' %}
+{% endblock %}
+
+{% block col %}
+
+{% block p %}
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+        <!-- คอลัมที่ 1 -->
+        {% for crs in course %}
+        <div
+            class="max-w-[301px] mx-0 mt-16 bg-white rounded-lg text-gray-900 border border-black-300 hover:shadow-2xl">
+            <a href="{% url 'c' crs.pk %}" class="block rounded-t-lg overflow-hidden h-[100px] w-full"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY5OMLIuX_s-NCoEz0dP_mqNNifSliO4kgUNebBiBrBqV2TY1mUDDxUn_wa2VEYL6q9p4&usqp=CAU');">
+                <div class="flex">
+                    <span class="mt-10 ml-4 text-white text-lg overflow-hidden text-overflow-ellipsis">
+                        {{ crs.title }}<br><span class="text-sm">{{ crs.id }}</span></span>
+                </div>
+            </a>
+            <div
+                class="mx-auto w-[75px] h-[75px] relative -mt-10 rounded-full overflow-hidden border-b border-gray-300 mr-[20px]">
+                <img class="h-full w-full" src='https://biographymask.com/wp-content/uploads/2021/03/Johnny-Sins.jpg'
+                    alt='Woman looking front'>
+            </div>
+            <div class="card-body h-[107px] max-w-[299px] overflow-hidden border-b border-gray-300">
+            </div>
+            <div class="card-footer p-4 flex justify-end items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 18 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 4H1m3 4H1m3 4H1m3 4H1m6.071.286a3.429 3.429 0 1 1 6.858 0M4 1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 ml-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                </svg>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% endblock %}
+
+
+
+
+
+
+{% block footer %}
+{% include 'course/footer.html' %}
+{% endblock %}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <main class="w-full flex">
+    {% block nav %}
+    {% block stream %}<a href="" class="alignt-baseline border-b border-b-4 border-gray-300 pt-2">Stream</a>{% endblock %}
+    {% block classwork %}<a href="#" class="text-slate-400 pt-2">Classwork</a>{% endblock %}
+    {% block people %}<a href="/people" class="text-slate-400 pt-2">People</a>{% endblock %}
+    {% block grades %}<a href="#" class="text-slate-400 pt-2">Grades</a>{% endblock %}
+    {% endblock %}
+  </main>
+  {% block col %}
+  {% endblock %}
+</body>
+{% block footer %}
+{% endblock %}
+
+</html>

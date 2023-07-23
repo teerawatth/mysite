@@ -1,0 +1,68 @@
+{% extends 'course/index.html' %}
+
+{% block nav %}
+{% include 'course/topbarcourse.html' %}
+{% endblock %}
+{% block col %}
+
+{% block p %}
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-6 gap-4">
+        {% block bg %}
+        <div class="col-start-2 col-span-4 text-center font-serif text-4xl">Lecturer</div>
+        <div class="col-start-2 col-span-4 text-center font-serif">
+            <div class="grid grid-cols-1 gap-4 mx-auto mt-0">
+                <div class="container mx-auto my-40">
+                    <div>
+                        <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6  lg:w-4/6 xl:w-3/6 mx-auto border-4 border-blue-200">
+                            <div class="flex justify-center">
+                                <img src="https://www.suddenviral.com/wp-content/uploads/2022/07/Dolly-Chaiwala-SuddenViral-Sudden-Viral.jpg" alt
+                                    class="rounded-full mx-auto absolute object-cover -mt-28 w-40 h-40 shadow-md border-2 border-blue-700 transition duration-200 transform hover:scale-110">
+                            </div>
+
+                            <div class="mt-16">
+                                <h1 class="font-bold text-center text-3xl text-gray-900">{{ lecturer.first_name }}
+                                    {{ lecturer.last_name }}</h1>
+
+                                <span>
+
+                                </span>
+                                </p>
+                                <div class="my-5 px-6">
+                                    <a href="#"
+                                        class="text-gray-200 block rounded-lg text-center font-medium text-lg leading-6 px-6 py-3 bg-gray-900 hover:bg-black hover:text-white">
+                                        USER ID : <span class="font-bold"> {{ lecturer.id }}</span></a>
+                                </div>
+                                <div class="flex justify-between items-center my-5 px-6">
+                                    <a href class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-lg text-center w-full py-3">Email : {{ lecturer.email }}</a>
+                                </div>
+                                <div class="w-full">
+                                    <h3 class="font-semibold text-lg text-gray-900 text-left px-6">Information</h3>
+                                    <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
+                                        <a href="#"
+                                            class="w-full border-t border-4 border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-black transition duration-150 text-xl">
+                                            <img src="https://avatars0.githubusercontent.com/u/35900628?v=4" alt
+                                                class="rounded-full h-8 shadow-md inline-block mr-4 float-left">
+                                            <span class="text-gray-500 text-lg float-left">Department : {{ lecturer.department }}</span>
+                                        </a>
+
+                                        <a href="#"
+                                            class="w-full border-t border-4 border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-black transition duration-150 text-xl">
+                                            <img src="https://avatars0.githubusercontent.com/u/35900628?v=4" alt
+                                                class="rounded-full h-8 shadow-md inline-block mr-4 float-left">
+                                            <span class="text-gray-500 text-lg float-left">Faculty : {{ lecturer.faculty }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+{% endblock %}
